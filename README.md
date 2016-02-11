@@ -25,6 +25,7 @@ $ sudo cp -R * /usr/local
 ## Get the repo
 
 ```bash
+$ cd ~
 $ git clone https://github.com/RainShadow/neoserver.git
 ```
 
