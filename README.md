@@ -9,7 +9,7 @@ After SHH'ing in, all commands below are run on the Raspberry Pi.
 ## SSH in
 
 host: raspberrypi
-IP: 192.168.1.6
+IP: 192.168.1.6  (this is mine, your milage may vary)
 
 user/pw: pi/raspberry
 
@@ -55,7 +55,7 @@ $ fg %1
 
 (Obviously not on the Raspberry but on some machine that can "see" it)
 
-http://<ip address>:8080
+http://[the ip address from SSH'ing]:8080
 
   or
 
