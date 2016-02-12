@@ -17,6 +17,8 @@ router.get('/', function(request, response) {
 
 // update server's code to the latest out of GitHub
 router.get('/update', require('./routes/update'));
+// hit this url to restart the server
+router.get('/restart', require('./routes/restart'));
 
 var server = http.createServer(router);
 
