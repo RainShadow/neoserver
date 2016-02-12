@@ -29,6 +29,11 @@ $ cd ~
 $ git clone https://github.com/RainShadow/neoserver.git
 ```
 
+## Get neoserver's node dependencies
+```bash
+$ sudo npm install
+```
+
 ## Run it
 
 ```bash
