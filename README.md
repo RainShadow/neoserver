@@ -65,3 +65,11 @@ http://[the ip address from SSH'ing]:8080
   or
 
 http://raspberrypi.local:8080
+
+## A page for developers
+
+The page [http://raspberrypi.local:8080/dev](http://raspberrypi.local:8080/dev) allows you to do the following:
+
+1. Check if your server's code up-to-date (or not)
+1. Update it from the master repository on GitHub
+1. Restart the server (needed for an update to take affect)
