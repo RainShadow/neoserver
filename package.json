@@ -1,0 +1,20 @@
+{
+  "name": "neoserver",
+  "version": "0.1.0",
+  "description": "Web-based controller for RainShadow's LED system",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RainShadow/neoserver.git"
+  },
+  "author": "RainShadow",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/RainShadow/neoserver/issues"
+  },
+  "homepage": "https://github.com/RainShadow/neoserver#readme"
+}
