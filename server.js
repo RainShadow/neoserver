@@ -8,17 +8,21 @@ var PORT=8080;
 
 // the default route
 router.get('/', function(request, response) {
-  response.end("Hello, James!");
+  router.render_template_file('public/index.html', {}, function(exists, html) {
+    response.end(html);
+  });
 });
 
 //
-// other routes.  processing logic in separate files
+// other routes defined in separate files
 //
 
-// update server's code to the latest out of GitHub
-router.get('/update', require('./routes/update'));
-// hit this url to restart the server
-router.get('/restart', require('./routes/restart'));
+// a dev page from which one can update and restart the server
+require(__dirname+'/routes/dev')(router, '/dev');
+// a simple git API
+require(__dirname+'/routes/git')(router, '/git');
+// a very simple API for restarting the server
+require(__dirname+'/routes/restart')(router, '/restart');
 
 var server = http.createServer(router);
 

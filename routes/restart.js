@@ -1,7 +1,9 @@
 var fork = require('child_process').fork;
 
-module.exports = function(request, response) {
-  // fork('/Users/personal/Dropbox/projects/neoserver/server.js');
-  fork('/home/pi/neoserver/server.js');
-  process.exit(0);
+module.exports = function(router, route) {
+  // restarts the server by forking a new server process then killing this one
+  router.put(route, function(request, response) {
+    fork(__dirname+'/../server.js');  // since this file is in the ./routes dir...
+    process.exit(0);
+  });
 };

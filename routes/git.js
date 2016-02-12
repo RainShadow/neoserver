@@ -1,0 +1,18 @@
+var spawnSync = require('child_process').spawnSync;
+
+module.exports = function(router, route) {
+  // fetches a list of files that have changed between this server and the remote master
+  router.get(route, function(request, response) {
+    // var ret = spawnSync('git', ['-C', __dirname, 'diff', 'origin', '--stat']);
+    var ret = spawnSync('git', ['-C', __dirname, 'status']);
+    if (ret.stderr.length > 0) response.end('ERROR: '+ret.stderr);
+    response.end(ret.stdout);
+  });
+
+  // updates this server to the state of the remote master
+  router.patch(route, function(request, response) {
+    var ret = spawnSync('git', ['-C', __dirname, 'pull']);
+    if (ret.stderr.length > 0) response.end('ERROR: '+ret.stderr);
+    response.end(ret.stdout);
+  });
+};
