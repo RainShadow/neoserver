@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/RainShadow/neoserver/issues"
   },
-  "homepage": "https://github.com/RainShadow/neoserver#readme"
+  "homepage": "https://github.com/RainShadow/neoserver#readme",
+  "dependencies": {
+    "node-simple-router": "^0.10.0"
+  }
 }

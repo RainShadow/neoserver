@@ -1,19 +1,25 @@
+// node's native http handler
 var http = require('http');
+// something for handling routes.  Could use express but it's BIG
+var Router = require('node-simple-router');
+var router = Router();
 
-//Lets define a port we want to listen to
-const PORT=8080; 
+var PORT=8080;
 
-//We need a function which handles requests and send response
-function handleRequest(request, response){
-    response.end('<h1>Hello, James!</h1>It Works!! Path Hit: ' + request.url);
-}
-
-//Create a server
-var server = http.createServer(handleRequest);
-
-//Lets start our server
-server.listen(PORT, function(){
-    //Callback triggered when server is successfully listening. Hurray!
-    console.log("Server listening on: http://localhost:%s", PORT);
+// the default route
+router.get('/', function(request, response) {
+  response.end("Hello, James!");
 });
 
+//
+// other routes.  processing logic in separate files
+//
+
+// update server's code to the latest out of GitHub
+router.get('/update', require('./routes/update'));
+
+var server = http.createServer(router);
+
+server.listen(PORT, function() {
+    console.log("Server listening on: http://localhost:%s", PORT);
+});
